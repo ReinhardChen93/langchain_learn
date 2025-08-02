@@ -1,1 +1,30 @@
+# 历史记录
 .history
+
+# Python相关
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.coverage
+.pytest_cache/
+
+
+
+# 虚拟环境
+venv/
+env/
+.venv/
+
+# IDE相关
+.vscode/
+.idea/
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 环境变量文件
+.env

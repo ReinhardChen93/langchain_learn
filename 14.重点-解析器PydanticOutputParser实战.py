@@ -64,12 +64,15 @@ json_parser = JsonOutputParser(pydantic_object=SentimentResult)
 # 构建处理链  
 parser = JsonOutputParser(pydantic_object=SentimentResult)  
 
-prompt = ChatPromptTemplate.from_template("""  
-分析评论情感：  
-{input}  
-按以下JSON格式返回：  
-{format_instructions}  
-""").partial(format_instructions=parser.get_format_instructions())  
+prompt = ChatPromptTemplate.from_template(
+    """  
+        分析评论情感：  
+        {input}  
+        按以下JSON格式返回：  
+        {format_instructions}  
+    """
+).partial(format_instructions=parser.get_format_instructions())
+
 chain = prompt | model | parser
 
 # 执行分析  
